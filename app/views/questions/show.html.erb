@@ -35,7 +35,31 @@
 </div>
 <%= image_tag @question.image.variant(resize: '200x200'), class: 'question-image' if @question.image.attached? %>
 
-<%#= render 'shared/error_messages', model: @comment %>
+<%= render 'shared/error_messages', model: @comment %>
+
+<% if user_signed_in? %>
+
+  <%= form_with(model: [@question, @comment], local: true) do |form| %>
+    <%= form.text_area :text, placeholder: "コメントする", rows: "5", cols: "59" %>
+      <div>
+        <%= form.submit "投稿" %>
+      </div>
+  <% end %>
+
+  <% if @comments %>
+    <% @comments.each do |comment| %>
+      <p>
+        <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+        <%= comment.text %>
+        <%= simple_time(comment.created_at) %>
+
+        <% if current_user.id == comment.user_id %>
+          <%= link_to '削除', question_comment_path(comment.question.id, comment.id), method: :delete %>
+        <% end %>
+      </p>
+    <% end %>
+  <% end %>
+<% end %>
 
 <div class="go-back-homepage">
 <%=link_to "ホームへ戻る", root_path %>
