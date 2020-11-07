@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :questions
+  has_many :comments
 
   enum gender: { yet: 0, already: 1 }
 
