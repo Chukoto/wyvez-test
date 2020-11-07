@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :specified_question, only: [:show, :edit, :update]
-  before_action :specified_user, only: [:edit]
+  before_action :specified_question, only: [:show, :edit, :update, :destroy]
+  before_action :specified_user, only: [:edit, :destroy]
 
   def index
     @questions = Question.order('created_at DESC')
@@ -31,6 +31,14 @@ class QuestionsController < ApplicationController
       redirect_to action: :show
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @question.destroy
+      redirect_to root_path
+    else
+      render :show
     end
   end
 
