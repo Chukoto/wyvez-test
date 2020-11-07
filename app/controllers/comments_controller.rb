@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-before_action :move_to_question, only: [:create]
+before_action :move_to_question, only: [:create, :destroy]
 
   def create
     @comment = current_user.comments.new(comment_params)
@@ -9,6 +9,12 @@ before_action :move_to_question, only: [:create]
     else
       render 'questions/show'  #仮の記述
     end
+  end
+
+  def destroy
+    comment = Comment.find_by(id: params[:id], question_id: params[:question_id])
+    comment.destroy
+    redirect_to @question
   end
 
   private
