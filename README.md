@@ -44,7 +44,7 @@
 - belongs_to :user
 - belongs_to :question
 
-## favorites テーブル
+## bookmarks テーブル
 
 | Column       | Type    | Options     |
 | ------------ | ------- | ----------- |
