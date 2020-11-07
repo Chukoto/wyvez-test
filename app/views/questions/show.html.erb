@@ -6,7 +6,7 @@
 
   <% if user_signed_in? && current_user.id == @question.user.id %>
     <%= link_to '編集する', edit_question_path(@question.id), method: :get %>
-    <%= link_to '削除する', '#', method: :delete %>
+    <%= link_to '削除する', question_path(@question.id), method: :delete %>
   <% end %>
 
 <div>
