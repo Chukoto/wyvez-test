@@ -9,7 +9,7 @@
 
   <% if user_signed_in? %>
   <div class='post-btn'>
-    <%= link_to '質問する', '#' %>
+    <%= link_to '質問する', new_question_path %>
   </div>
   <% end %>
 
@@ -18,7 +18,7 @@
     <h2 class='title'>お悩み一覧</h2>
     <ul class='unset'>  
     <%# 部分テンプレートで質問投稿一覧を表示する %>
-    <%#= render partial: 'question', collection: @questions %>
+    <%= render partial: 'question', collection: @questions %>
   </div>
 
 </div>
