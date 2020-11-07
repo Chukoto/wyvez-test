@@ -1,24 +1,57 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column             | Type    | Options     |
+| ------------------ | ------- | ----------- |
+| nickname           | string  | null: false |
+| email              | string  | null: false |
+| encrypted_password | string  | null: false |
+| first_name         | string  | null: false |
+| last_name          | string  | null: false |
+| birthday           | date    | null: false |
+| gender             | integer | null: false |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :questions
+- has_many :comments
 
-* Configuration
+## questions テーブル
 
-* Database creation
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| category_id | integer    | null: false                    |
+| title       | string     | null: false                    |
+| text        | string     | null: false                    |
+| user        | references | null: false, foreign_key: true |
 
-* Database initialization
+### Association
 
-* How to run the test suite
+- belongs_to :user
+- has_many :comments
 
-* Services (job queues, cache servers, search engines, etc.)
+## comments テーブル
 
-* Deployment instructions
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| text         | string     | null: false                    |
+| user         | references | null: false, foreign_key: true |
+| question     | references | null: false, foreign_key: true |
 
-* ...
+### Association
+
+- belongs_to :user
+- belongs_to :question
+
+## favorites テーブル
+
+| Column       | Type    | Options     |
+| ------------ | ------- | ----------- |
+| user_id      | integer | null: false |
+| question_id  | integer | null: false |
+
+### Association
+
+- belongs_to :user
+- belongs_to :question
