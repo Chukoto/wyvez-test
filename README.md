@@ -16,6 +16,7 @@
 
 - has_many :questions
 - has_many :comments
+- has_many :bookmarks
 
 ## questions テーブル
 
@@ -30,6 +31,7 @@
 
 - belongs_to :user
 - has_many :comments
+- has_many :bookmarks
 
 ## comments テーブル
 
@@ -55,3 +57,4 @@
 
 - belongs_to :user
 - belongs_to :question
+- 
