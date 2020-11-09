@@ -17,6 +17,7 @@
 - has_many :questions
 - has_many :comments
 - has_many :bookmarks
+- has_one  :profile
 
 ## questions テーブル
 
@@ -57,3 +58,15 @@
 
 - belongs_to :user
 - belongs_to :question
+
+## profiles テーブル
+
+| Column        | Type       | Options     |
+| ------------- | ---------- | ----------- |
+| experience_id | integer    | null: false |
+| text          | text       | null: true  |
+| user_id       | references | null: false |
+
+### Association
+
+- belongs_to :user
