@@ -4,7 +4,7 @@ class CreateQuestions < ActiveRecord::Migration[6.0]
       t.integer :category_id, null: false
       t.string  :title, null: false
       t.text    :text, null: false
-      t.references :user, foreign_key: true
+      t.references :user, null: false, foreign_key: true
       t.timestamps
     end
   end
