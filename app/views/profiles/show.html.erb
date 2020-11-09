@@ -7,3 +7,18 @@
   あなたのプロフィール
 </div>
 <% end %>
+
+<div>
+  <% if user_signed_in? && current_user.id == @user.id %>
+    <%= link_to '編集する', '#' %>
+  <% end %>
+</div>
+
+<h4>性転換歴</h4>
+  <div>まだ登録されていません</div>
+
+<h4>パパ活歴</h4>
+  <div>まだ登録されていません</div>
+
+<h4>プロフィール</h4>
+  <div>プロフィールがありません</div>
