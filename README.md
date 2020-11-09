@@ -63,7 +63,8 @@
 
 | Column        | Type       | Options     |
 | ------------- | ---------- | ----------- |
-| experience_id | integer    | null: false |
+| trans_exp _id | integer    | null: false |
+| papa_exp_id   | integer    | null: false |
 | text          | text       | null: true  |
 | user_id       | references | null: false |
 
