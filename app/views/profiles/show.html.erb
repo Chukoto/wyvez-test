@@ -1,18 +1,15 @@
 <% if user_signed_in? && current_user.id != @user.id %>
-<div>
-  <%= "#{ @user.nickname }さんのプロフィール" %>
-</div>
-<% else %>
-<div>
-  あなたのプロフィール
-</div>
+  <div>
+    <%= "#{ @user.nickname }さんのプロフィール" %>
+  </div>
+  <% else %>
+  <div>
+    あなたのプロフィール
+  </div>
+  <div>
+    <%= link_to '編集する', edit_profile_path(@user.id), method: :get %>
+  </div>
 <% end %>
-
-<div>
-  <% if user_signed_in? && current_user.id == @user.id %>
-    <%= link_to '編集する', '#' %>
-  <% end %>
-</div>
 
 <h4>性転換歴</h4>
   <div>まだ登録されていません</div>
