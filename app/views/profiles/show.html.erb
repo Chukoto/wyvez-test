@@ -1,0 +1,9 @@
+<% if user_signed_in? && current_user.id != @user.id %>
+<div>
+  <%= "#{ @user.nickname }さんのプロフィール" %>
+</div>
+<% else %>
+<div>
+  あなたのプロフィール
+</div>
+<% end %>
