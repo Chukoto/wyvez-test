@@ -35,7 +35,7 @@
 <%#// プロフィールがない場合 %>
 <% else %>
 <%# プロフィールがある場合 %>
-  <% if @profile.image == nil%>
+  <% if @profile.image != nil%>
     <h4>プロフィール画像</h4>
     <%= image_tag @profile.image.variant(resize: '200x200'), class: 'profile-image' if @profile.image.attached? %>
   <% else %>
