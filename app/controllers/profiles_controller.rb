@@ -33,7 +33,7 @@ class ProfilesController < ApplicationController
 
   private
   def profile_params
-    params.require(:profile).permit(:trans_exp_id, :papa_exp_id, :text).merge(user_id: current_user.id)
+    params.require(:profile).permit(:trans_exp_id, :papa_exp_id, :text, :image).merge(user_id: current_user.id)
   end
 
   def specified_profile
