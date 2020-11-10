@@ -8,11 +8,11 @@
   </div>
 <% end %>
 
-<% if @profile == nil %>
+<% if user_signed_in? && current_user.id == @user.id && @profile == nil %>
   <div>
     <%= link_to '作成する',  new_profile_path, method: :get %>
   </div>
-<% else %>
+<% elsif user_signed_in? && current_user.id == @user.id && @profile != nil %>
   <div>
     <%= link_to '編集する', edit_profile_path, method: :get %>
   </div>
