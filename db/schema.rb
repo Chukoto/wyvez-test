@@ -49,7 +49,8 @@ ActiveRecord::Schema.define(version: 2020_11_09_085502) do
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "experience_id", null: false
+    t.integer "trans_exp_id", null: false
+    t.integer "papa_exp_id", null: false
     t.text "text"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -61,7 +62,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_085502) do
     t.integer "category_id", null: false
     t.string "title", null: false
     t.text "text", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_questions_on_user_id"

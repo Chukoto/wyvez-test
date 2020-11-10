@@ -1,9 +1,44 @@
-<% if user_signed_in? && current_user.id != @user.id %>
-<div>
-  <%= "#{ @user.nickname }さんのプロフィール" %>
-</div>
+<% if user_signed_in? && current_user.id == @profile.user_id %>
+  <div>
+    あなたのプロフィール
+  </div>
+  <div>
+    <%= link_to '作成する',  new_profile_path, method: :get %>
+  </div>
+  <div>
+    <%= link_to '編集する', edit_profile_path, method: :get %>
+  </div>
+
 <% else %>
-<div>
-  あなたのプロフィール
-</div>
+  <div>
+    <%= "#{@profile.user.nickname}さんのプロフィール" %>
+  </div>
 <% end %>
+
+<%# プロフィールがない場合 %>
+<% if @profile == nil %>
+<h4>性転換歴</h4>
+  <div>まだ登録されていません</div>
+
+<h4>パパ活歴</h4>
+  <div>まだ登録されていません</div>
+
+<h4>プロフィール</h4>
+  <div>プロフィールがありません</div>
+<%#// プロフィールがない場合 %>
+<% else %>
+<%# プロフィールがある場合 %>
+<h4>性転換歴</h4>
+  <div><%= @profile.trans_exp.name %></div>
+
+<h4>パパ活歴</h4>
+  <div><%= @profile.papa_exp.name %></div>
+
+<h4>プロフィール</h4>
+  <div><%= @profile.text %></div>
+<% end %>
+<%#// プロフィールがある場合 %>
+
+<div class="go-back-homepage">
+<%=link_to "ホームへ戻る", root_path %>
+</div>
