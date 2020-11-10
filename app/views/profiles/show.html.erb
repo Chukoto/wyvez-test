@@ -1,14 +1,19 @@
-
+<% if user_signed_in? && current_user.id == @profile.user_id %>
   <div>
-    <%= "さんのプロフィール" %>
+    あなたのプロフィール
   </div>
-
   <div>
     <%= link_to '作成する',  new_profile_path, method: :get %>
   </div>
   <div>
     <%= link_to '編集する', edit_profile_path, method: :get %>
   </div>
+
+<% else %>
+  <div>
+    <%= "#{@profile.user.nickname}さんのプロフィール" %>
+  </div>
+<% end %>
 
 <%# プロフィールがない場合 %>
 <% if @profile == nil %>
@@ -33,3 +38,7 @@
   <div><%= @profile.text %></div>
 <% end %>
 <%#// プロフィールがある場合 %>
+
+<div class="go-back-homepage">
+<%=link_to "ホームへ戻る", root_path %>
+</div>
