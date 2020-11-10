@@ -7,11 +7,12 @@ class Profile < ApplicationRecord
 
   has_one_attached :image
 
-  validates :text, presence: false
+  validates :image, presence: false, unless: :was_attached?
 
   with_options presence: true do
     validates :trans_exp_id, numericality: { other_than: 0 }
     validates :papa_exp_id, numericality: { other_than: 0 }
+    validates :text
   end
 
   def was_attached?

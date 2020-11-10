@@ -61,12 +61,12 @@
 
 ## profiles テーブル
 
-| Column        | Type       | Options     |
-| ------------- | ---------- | ----------- |
-| trans_exp _id | integer    | null: false |
-| papa_exp_id   | integer    | null: false |
-| text          | text       | null: true  |
-| user_id       | references | null: false |
+| Column                | Type       | Options                        |
+| --------------------- | ---------- | ------------------------------ |
+| trans_exp _id         | integer    | null: false                    |
+| papa_exp_id           | integer    | null: false                    |
+| text                  | text       | null: false                    |
+| user                  | references | null: false, foreign_key: true |
 
 ### Association
 
