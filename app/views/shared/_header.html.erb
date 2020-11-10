@@ -3,11 +3,19 @@
   </div>
 
   <ul class='lists-right'>
-    <% if user_signed_in? %>
-    <li><%= link_to "#{current_user.nickname}さん", "#", class: "user-nickname" %></li>
+    <% if user_signed_in? && current_user.profile.image != nil %> 
+    <h3><%= "#{current_user.nickname}でログイン中" %></h3>
     <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
     <li><%= link_to 'ブックマーク一覧', question_bookmarks_path(current_user.id) %></li>
     <li><%= link_to 'プロフィール', profile_path(current_user.id), class: "profile" %></li>
+    <%= image_tag current_user.profile.image.variant(resize: '100x100') %>
+
+    <% elsif user_signed_in? %>
+    <h3><%= "#{current_user.nickname}でログイン中" %></h3>
+    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+    <li><%= link_to 'ブックマーク一覧', question_bookmarks_path(current_user.id) %></li>
+    <li><%= link_to 'プロフィール', profile_path(current_user.id), class: "profile" %></li>
+    
     <% else %>
     <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
     <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
