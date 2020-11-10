@@ -6,6 +6,9 @@
   <div>
     あなたのプロフィール
   </div>
+    <div>
+    <%= link_to '作成する',  new_profile_path(@user.id), method: :get %>
+  </div>
   <div>
     <%= link_to '編集する', edit_profile_path(@user.id), method: :get %>
   </div>
