@@ -8,7 +8,7 @@
     <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
     <li><%= link_to 'ブックマーク一覧', question_bookmarks_path(current_user.id) %></li>
     <li><%= link_to 'プロフィール', profile_path(current_user.id), class: "profile" %></li>
-    <li><%= link_to 'パパリスト', papas_path(current_user.id), class: "papa" %></li>
+    <li><%= link_to 'パパリスト', papa_path(current_user.id), class: "papa" %></li>
       <% if current_user.profile && current_user.profile.image.present? %>
         <%= image_tag current_user.profile.image.variant(resize: '100x100') %>
       <% end %>
