@@ -80,7 +80,7 @@
 | name                  | string     | null: false                    |
 | age_id                | string     | null: false                    |
 | marriage_id           | string     | null: false                    |
-| children_id           | string     | null: false                    |
+| child_id              | string     | null: false                    |
 | memo                  | string     | null: false                    |
 | user                  | references | null: false, foreign_key: true |
 
