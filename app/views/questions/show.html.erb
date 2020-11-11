@@ -9,31 +9,33 @@
     <%= link_to '削除する', question_path(@question.id), method: :delete %>
   <% end %>
 
-<div>
+<b>
   質問タイトル
-</div>
+</b>
 <div>
   <%= @question.title %>
 </div>
 
-<div>
+<b>
   質問カテゴリー
-</div>
+</b>
 <div>
   <%= @question.category.name %>
 </div>
 
-<div>
+<b>
   質問内容
-</div>
+</b>
 <div>
   <%= @question.text%>
 </div>
 
+<% if @question.image.present? %>
 <div>
   画像
 </div>
 <%= image_tag @question.image.variant(resize: '200x200'), class: 'question-image' if @question.image.attached? %>
+<% end %>
 
 <%= render 'shared/error_messages', model: @comment %>
 
