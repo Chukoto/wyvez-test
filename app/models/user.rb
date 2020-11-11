@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :comments
   has_many :bookmarks
   has_many :questions, through: :bookmarks
+  has_many :papas
   has_one  :profile
 
   enum gender: { yet: 0, already: 1 }
