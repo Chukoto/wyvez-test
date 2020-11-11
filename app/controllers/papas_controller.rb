@@ -12,7 +12,7 @@ before_action :authenticate_user!, except: [:index, :show]
   def create
     @papa = Papa.new(papa_params)
     if @papa.save
-      redirect_to papas_path
+      redirect_to root_path
     else
       render :new
     end
