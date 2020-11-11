@@ -3,7 +3,7 @@
   </div>
 
   <ul class='lists-right'>
-    <% if user_signed_in? && current_user.profile.image != nil %> 
+    <% if user_signed_in? && current_user.profile.image.present? %> 
     <h3><%= "#{current_user.nickname}でログイン中" %></h3>
     <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
     <li><%= link_to 'ブックマーク一覧', question_bookmarks_path(current_user.id) %></li>
