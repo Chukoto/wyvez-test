@@ -17,6 +17,7 @@
 - has_many :questions
 - has_many :comments
 - has_many :bookmarks
+- has_many :papas
 - has_one  :profile
 
 ## questions テーブル
@@ -66,6 +67,21 @@
 | trans_exp _id         | integer    | null: false                    |
 | papa_exp_id           | integer    | null: false                    |
 | text                  | text       | null: false                    |
+| user                  | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+
+## papas テーブル
+
+| Column                | Type       | Options                        |
+| --------------------- | ---------- | ------------------------------ |
+| name                  | string     | null: false                    |
+| age_id                | string     | null: false                    |
+| marriage_id           | string     | null: false                    |
+| child_id              | string     | null: false                    |
+| memo                  | string     | null: false                    |
 | user                  | references | null: false, foreign_key: true |
 
 ### Association
