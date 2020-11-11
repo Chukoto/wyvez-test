@@ -1,7 +1,8 @@
 class PapasController < ApplicationController
 before_action :authenticate_user!, except: [:index, :show] 
 
-  def index    
+  def show
+    @papas = Papa.all   
   end
 
   def new

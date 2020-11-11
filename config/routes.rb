@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :profiles, only: [:new, :create, :show, :edit, :update]
 
-  resources :papas, only: [:index, :new, :create]
+  resources :papas, only: [:show, :new, :create]
 
   resources :questions do
     resources :comments, only: [:create, :destroy]
