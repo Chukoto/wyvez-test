@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post "bookmarks/:question_id/destroy" => "bookmarks#destroy"
 
   resources :profiles, only: [:new, :create, :show, :edit, :update]
+  resources :papas, only: [:index]
   resources :questions do
     resources :comments, only: [:create, :destroy]
     resources :bookmarks, only: [:index, :create, :destroy]
