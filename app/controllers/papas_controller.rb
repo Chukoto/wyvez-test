@@ -1,9 +1,10 @@
 class PapasController < ApplicationController
 before_action :authenticate_user!, except: [:index, :show] 
-before_action :specified_papa, only: [:show, :edit, :update]
-before_action :specified_user, only: [:edit]
+before_action :specified_papa, only: [:show, :edit, :update, :destroy]
+before_action :specified_user, only: [:edit, :destroy]
 
   def show
+    @papas = current_user.papas
   end
 
   def new
@@ -13,7 +14,7 @@ before_action :specified_user, only: [:edit]
   def create
     @papa = Papa.new(papa_params)
     if @papa.save
-      redirect_to root_path
+      redirect_to papa_path(current_user.id)
     else
       render :new
     end
@@ -27,6 +28,14 @@ before_action :specified_user, only: [:edit]
       redirect_to action: :show
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @papa.destroy
+      redirect_to papa_path(current_user.id)
+    else
+      render :show
     end
   end
 
