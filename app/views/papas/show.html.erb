@@ -10,7 +10,7 @@
   <%= link_to "パパを追加する", new_papa_path %>
 </div>
 
-  <% current_user.papas.each do |papa| %>
+  <% @papas.each do |papa| %>
   ----------------------------------------
     <ul>
       <div>
@@ -36,6 +36,6 @@
     </ul>
     <div>
       <%= link_to "編集する", edit_papa_path(papa.id) %>
-      <%= link_to "削除する", "#" %>
+      <%= link_to "削除する", papa_path(papa.id), method: :delete %>
     </div>
   <% end %>
