@@ -18,6 +18,7 @@
 - has_many :comments
 - has_many :bookmarks
 - has_many :papas
+- has_many :papa_events
 - has_one  :profile
 
 ## questions テーブル
@@ -88,3 +89,25 @@
 ### Association
 
 - belongs_to :user
+- has_many :papa_events
+
+## papa_events テーブル
+
+| Column                | Type       | Options                        |
+| --------------------- | ---------- | ------------------------------ |
+| date                  | integer    | null: false                    |
+| start_time_id         | integer    | null: false                    |
+| end_time_id           | integer    | null: true                     |
+| action_id             | integer    | null: false                    |
+| todo                  | text       | null: true                     |
+| place                 | text       | null: true                     |
+| expected_reward       | integer    | null: false                    |
+| reward                | integer    | null: true                     |
+| status_id             | integer    | null: false                    |
+| user                  | references | null: false, foreign_key: true |
+| papa                  | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :papa

@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   post "bookmarks/:question_id/create" => "bookmarks#create"
   post "bookmarks/:question_id/destroy" => "bookmarks#destroy"
 
-  resources :profiles, only: [:show, :new, :create, :edit, :update]
+  resources :profiles, except: [:index, :destroy]
 
-  resources :papas, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :papas, except: [:index] do
+    resources :papa_events, only: [:show]
+  end
 
   resources :questions do
     resources :comments, only: [:create, :destroy]
