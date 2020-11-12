@@ -16,6 +16,7 @@ class Papa < ApplicationRecord
     validates :age_id, numericality: { other_than: 0 }
     validates :marriage_id, numericality: { other_than: 0 }
     validates :child_id, numericality: { other_than: 0 }
+    validates :app_name
   end
 
   def was_attached?
