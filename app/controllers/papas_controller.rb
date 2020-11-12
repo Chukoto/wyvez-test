@@ -42,7 +42,7 @@ class PapasController < ApplicationController
   private
 
   def papa_params
-    params.require(:papa).permit(:image, :name, :age_id, :marriage_id, :child_id, :memo).merge(user_id: current_user.id)
+    params.require(:papa).permit(:image, :name, :age_id, :marriage_id, :child_id, :app_name, :memo).merge(user_id: current_user.id)
   end
 
   def specified_papa
