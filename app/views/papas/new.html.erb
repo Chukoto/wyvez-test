@@ -45,6 +45,13 @@
   </div>
   <%= f.collection_select(:child_id, Child.all, :id, :name, {}, {class:"select-box", id:"child"}) %>
   
+  <%# 連絡アプリ名 %>
+  <div class="papa-name">
+    連絡アプリ名
+    <span class="indispensable">必須</span>
+  </div>
+  <%= f.text_field :app_name, class:"app_name-input", id:"app_name_id", placeholder:"Tinder, Pairs, LINEなど（必須 40文字まで）", maxlength:"40" %>
+
   <%# パパに関するメモ %>
   <div class="papa-name">
     パパに関するメモ

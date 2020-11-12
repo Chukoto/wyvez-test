@@ -5,6 +5,7 @@ class CreatePapas < ActiveRecord::Migration[6.0]
       t.integer    :age_id, null: false
       t.integer    :marriage_id, null: false
       t.integer    :child_id, null: false
+      t.string     :app_name, null: false
       t.text       :memo, null: true
       t.references :user, null: false, foreign_key: true
       t.timestamps

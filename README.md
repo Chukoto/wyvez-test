@@ -78,10 +78,11 @@
 | Column                | Type       | Options                        |
 | --------------------- | ---------- | ------------------------------ |
 | name                  | string     | null: false                    |
-| age_id                | string     | null: false                    |
-| marriage_id           | string     | null: false                    |
-| child_id              | string     | null: false                    |
-| memo                  | string     | null: true                     |
+| age_id                | integer    | null: false                    |
+| marriage_id           | integer    | null: false                    |
+| child_id              | integer    | null: false                    |
+| app_name              | string     | null: false                    |
+| memo                  | text       | null: true                     |
 | user                  | references | null: false, foreign_key: true |
 
 ### Association
