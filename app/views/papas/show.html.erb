@@ -10,7 +10,7 @@
   <%= link_to "パパを追加する", new_papa_path %>
 </div>
 
-  <% @user.papas.each do |papa| %>
+  <% current_user.papas.each do |papa| %>
   ----------------------------------------
     <ul>
       <div>

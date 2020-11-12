@@ -1,10 +1,9 @@
 class PapasController < ApplicationController
 before_action :authenticate_user!, except: [:index, :show] 
-before_action :specified_papa, only: [:edit, :update]
+before_action :specified_papa, only: [:show, :edit, :update]
 before_action :specified_user, only: [:edit]
 
   def show
-    @user = User.find(params[:id])
   end
 
   def new
