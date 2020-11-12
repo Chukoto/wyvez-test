@@ -6,7 +6,7 @@
 
 
 <div class="question-main">
-  <h2 class="question-title">悩める内容を教えてください</h2>
+  <h2 class="question-title">質問内容を教えてください</h2>
   <%= form_with model: @question, url: questions_path, method: :post, local: true do |f| %>
 
   <%= render 'shared/error_messages', model: f.object %>
