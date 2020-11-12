@@ -6,7 +6,7 @@ class PapaEvent < ApplicationRecord
   belongs_to_active_hash :status
 
   belongs_to :user
-  belongs_to :papa_event
+  belongs_to :papa
 
   with_options presence: false do
     validates :end_time_id, numericality: { other_than: 0 }
