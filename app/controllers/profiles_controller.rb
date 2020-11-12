@@ -3,6 +3,10 @@ class ProfilesController < ApplicationController
   before_action :specified_profile, only: [:show, :edit, :update]
   before_action :specified_user, only: [:edit]
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   def new
     @profile = Profile.new    
   end
@@ -14,10 +18,6 @@ class ProfilesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
-    @user = User.find(params[:id])
   end
 
   def edit

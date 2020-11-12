@@ -10,7 +10,7 @@
   <%= link_to "パパを追加する", new_papa_path %>
 </div>
 
-  <% @papas.each do |papa| %>
+  <% current_user.papas.each do |papa| %>
   ----------------------------------------
     <ul>
       <div>
@@ -34,4 +34,8 @@
         <%= "メモ：#{papa.memo}" %>
       </div>
     </ul>
+    <div>
+      <%= link_to "編集する", edit_papa_path(papa.id) %>
+      <%= link_to "削除する", "#" %>
+    </div>
   <% end %>

@@ -6,7 +6,7 @@
 
 
 <div class="question-main">
-  <h2 class="question-title">悩める内容を教えてください</h2>
+  <h2 class="question-title">質問内容を教えてください</h2>
   <%= form_with model: @question, url: question_path, method: :patch, local: true do |f| %>
 
   <%= render 'shared/error_messages', model: f.object %>
@@ -30,7 +30,7 @@
     質問内容
     <span class="indispensable">必須</span>
   </div>
-  <%= f.text_area :text, class:"text-text", id:"text_id", placeholder:"質問内容" %>
+  <%= f.text_area :text, class:"text-text", id:"text_id", placeholder:"質問内容", rows: "5", cols: "59" %>
 
   <%# 画像添付 %>
   <div class="image-field">
