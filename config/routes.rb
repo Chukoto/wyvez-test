@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :profiles, only: [:show, :new, :create, :edit, :update]
 
   resources :papas, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :papa_events, only: [:show]
 
   resources :questions do
     resources :comments, only: [:create, :destroy]
