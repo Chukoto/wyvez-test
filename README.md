@@ -81,7 +81,7 @@
 | age_id                | string     | null: false                    |
 | marriage_id           | string     | null: false                    |
 | child_id              | string     | null: false                    |
-| memo                  | string     | null: false                    |
+| memo                  | string     | null: true                     |
 | user                  | references | null: false, foreign_key: true |
 
 ### Association
