@@ -9,7 +9,7 @@
   <h2 class="papa-info">パパの情報</h2>
   <%= form_with model: @papa, url: papa_path, method: :patch, local: true do |f| %>
 
-  <%#= render 'shared/error_messages', model: f.object %>
+  <%= render 'shared/error_messages', model: f.object %>
 
   <%# 画像添付 %>
   <div class="image-field">
@@ -48,9 +48,8 @@
   <%# パパに関するメモ %>
   <div class="papa-name">
     パパに関するメモ
-    <span class="indispensable">必須</span>
   </div>
-  <%= f.text_area :memo, class:"memo-input", id:"memo_id", placeholder:"パパに関するメモ", rows: "10", cols: "80" %>
+  <%= f.text_area :memo, class:"memo-input", id:"memo_id", placeholder:"必要に応じてメモを記入してください", rows: "10", cols: "80" %>
 
   <%# 送信ボタン %>
   <div class="question-submit-btn">
