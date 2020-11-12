@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
   end
 
   def new
-    @profile = Profile.new    
+    @profile = Profile.new
   end
 
   def create
@@ -32,6 +32,7 @@ class ProfilesController < ApplicationController
   end
 
   private
+
   def profile_params
     params.require(:profile).permit(:trans_exp_id, :papa_exp_id, :text, :image).merge(user_id: current_user.id)
   end

@@ -1,13 +1,13 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-before_action :move_to_question, only: [:create, :destroy]
+  before_action :move_to_question, only: [:create, :destroy]
 
   def create
     @comment = current_user.comments.new(comment_params)
     if @comment.save
       redirect_to @question
     else
-      render 'questions/show'  #仮の記述
+      render 'questions/show'  # 仮の記述
     end
   end
 
