@@ -95,15 +95,15 @@
 
 | Column                | Type       | Options                        |
 | --------------------- | ---------- | ------------------------------ |
-| date                  | string     | null: false                    |
+| date                  | integer    | null: false                    |
 | start_time_id         | integer    | null: false                    |
 | end_time_id           | integer    | null: true                     |
 | action_id             | integer    | null: false                    |
 | todo                  | text       | null: true                     |
 | place                 | text       | null: true                     |
-| expected_reward       | integer    | null: true                     |
+| expected_reward       | integer    | null: false                    |
 | reward                | integer    | null: true                     |
-| status_id             | integer    | null: true                     |
+| status_id             | integer    | null: false                    |
 | user                  | references | null: false, foreign_key: true |
 | papa                  | references | null: false, foreign_key: true |
 
