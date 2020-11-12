@@ -102,7 +102,8 @@
 | todo                  | text       | null: true                     |
 | place                 | text       | null: true                     |
 | expected_reward       | integer    | null: true                     |
-| status_id             | integer    | null: false                    |
+| reward                | integer    | null: true                     |
+| status_id             | integer    | null: true                     |
 | user                  | references | null: false, foreign_key: true |
 | papa                  | references | null: false, foreign_key: true |
 
