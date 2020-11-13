@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 2020_11_12_074126) do
     t.integer "date", null: false
     t.datetime "started_at", null: false
     t.datetime "finished_at"
-    t.integer "action_id", null: false
+    t.integer "do_what_id", null: false
     t.text "todo"
     t.text "place"
     t.integer "expected_reward", null: false
