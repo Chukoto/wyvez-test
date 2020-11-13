@@ -1,7 +1,5 @@
 class PapaEvent < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :start_time
-  belongs_to_active_hash :end_time
   belongs_to_active_hash :action
   belongs_to_active_hash :status
 
@@ -9,7 +7,7 @@ class PapaEvent < ApplicationRecord
   belongs_to :papa
 
   with_options presence: false do
-    validates :end_time_id, numericality: { other_than: 0 }
+    validates :finished_at
     validates :todo
     validates :place
     validates :reward
@@ -17,7 +15,7 @@ class PapaEvent < ApplicationRecord
 
   with_options presence: true do
     validates :date
-    validates :start_time_id, numericality: { other_than: 0 }
+    validates :started_at
     validates :action_id, numericality: { other_than: 0 }
     validates :expected_reward
     validates :status_id, numericality: { other_than: 0 }
