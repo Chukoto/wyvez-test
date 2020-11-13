@@ -1,6 +1,6 @@
 class PapaEvent < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :action
+  belongs_to_active_hash :do_what
   belongs_to_active_hash :status
 
   belongs_to :user
