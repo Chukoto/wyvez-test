@@ -16,7 +16,7 @@ class PapaEvent < ApplicationRecord
   with_options presence: true do
     validates :date
     validates :started_at
-    validates :action_id, numericality: { other_than: 0 }
+    validates :do_what_id, numericality: { other_than: 0 }
     validates :expected_reward
     validates :status_id, numericality: { other_than: 0 }
   end
