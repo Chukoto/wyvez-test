@@ -4,7 +4,7 @@ class CreatePapaEvents < ActiveRecord::Migration[6.0]
       t.integer    :date,            null: false
       t.datetime   :started_at,      null: false
       t.datetime   :finished_at,     null: true
-      t.integer    :action_id,       null: false
+      t.integer    :do_what_id,      null: false
       t.text       :todo,            null: true
       t.text       :place,           null: true
       t.integer    :expected_reward, null: false

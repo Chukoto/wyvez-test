@@ -98,7 +98,7 @@
 | date                  | integer    | null: false                    |
 | started_at            | datetime   | null: false                    |
 | finished_at           | datetime   | null: true                     |
-| action_id             | integer    | null: false                    |
+| do_what_id            | integer    | null: false                    |
 | todo                  | text       | null: true                     |
 | place                 | text       | null: true                     |
 | expected_reward       | integer    | null: false                    |
