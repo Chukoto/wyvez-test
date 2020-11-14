@@ -1,7 +1,7 @@
 class PapaEventsController < ApplicationController
   before_action :authenticate_user!
   def show
-    @papa_events = current_user.papa_events.where(papa_id: params[:papa_id])
+    @papa_events = current_user.papa_events.where(papa_id: params[:papa_id]).order('created_at DESC')
   end
 
   def new
