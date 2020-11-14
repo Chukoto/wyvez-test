@@ -10,4 +10,29 @@
   <%= link_to "パパ活スケジュールを作成する", new_papa_papa_event_path %>
 </div>
 
-
+  <% @papa_events.each do |event| %>
+  ----------------------------------------
+    <ul>
+      </div>
+      <div>
+        <%= "開始日：#{event.started_at}さん"%>
+      </div>
+      <div>
+        <%= "終了日：#{event.finished_at}" %>
+      </div>
+      <div>
+        <%= "todo：#{event.todo}" %>
+      </div>
+      <div>
+        <%= "場所：#{event.place}" %>
+      </div>
+      <div>
+        <%= "見込み報酬額：#{event.expected_reward}" %>
+      </div>
+      <div>
+        <%= "報酬：#{event.reward}" %>
+      </div>
+    </ul>
+    <div>
+    </div>
+  <% end %>

@@ -1,5 +1,6 @@
 class PapaEventsController < ApplicationController
   def show
+    @papa_events = current_user.papa_events.where(papa_id: params[:papa_id])
   end
 
   def new
