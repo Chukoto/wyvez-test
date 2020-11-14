@@ -13,6 +13,11 @@
   <% @papa_events.each do |event| %>
   ----------------------------------------
     <ul>
+      <div>
+        <%= "パパの名前：#{event.papa.name}" %>
+      </div>
+      <div>
+        <%= "アプリ：#{event.papa.app_name}" %>
       </div>
       <div>
         <%= "開始日：#{event.started_at}さん"%>
