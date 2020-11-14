@@ -1,7 +1,6 @@
 class CreatePapaEvents < ActiveRecord::Migration[6.0]
   def change
     create_table :papa_events do |t|
-      t.integer    :date,            null: false
       t.datetime   :started_at,      null: false
       t.datetime   :finished_at,     null: true
       t.text       :todo,            null: true

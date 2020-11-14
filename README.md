@@ -95,7 +95,6 @@
 
 | Column                | Type       | Options                        |
 | --------------------- | ---------- | ------------------------------ |
-| date                  | integer    | null: false                    |
 | started_at            | datetime   | null: false                    |
 | finished_at           | datetime   | null: true                     |
 | do_what_id            | integer    | null: false                    |

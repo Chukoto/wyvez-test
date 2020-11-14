@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 2020_11_13_094445) do
   end
 
   create_table "papa_events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "date", null: false
     t.datetime "started_at", null: false
     t.datetime "finished_at"
     t.text "todo"

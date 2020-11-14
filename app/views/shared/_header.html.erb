@@ -10,7 +10,6 @@
     <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
     <li><%= link_to 'ブックマークリスト', question_bookmarks_path(current_user.id) %></li>
     <li><%= link_to 'パパリスト', papa_path(current_user.id), class: "papa" %></li>
-    <li><%= link_to 'パパ活スケジュール', papa_papa_event_path(current_user.id, current_user.id), class: "papa_event" %></li>
       <% if current_user.profile && current_user.profile.image.present? %>
         <%= image_tag current_user.profile.image.variant(resize: '100x100') %>
       <% end %>

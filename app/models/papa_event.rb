@@ -1,6 +1,6 @@
 class PapaEvent < ApplicationRecord
   #後でactive_hashを追加すること
-  
+
   belongs_to :user
   belongs_to :papa
 
@@ -12,7 +12,6 @@ class PapaEvent < ApplicationRecord
   end
 
   with_options presence: true do
-    validates :date
     validates :started_at
     validates :expected_reward
   end
