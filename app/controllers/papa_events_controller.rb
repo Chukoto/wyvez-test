@@ -1,5 +1,6 @@
 class PapaEventsController < ApplicationController
   before_action :authenticate_user!
+  before_action :specified_papa_event, only: [:edit, :update]
   def show
     @papa_events = current_user.papa_events.where(papa_id: params[:papa_id]).order('created_at DESC')
   end
@@ -17,9 +18,25 @@ class PapaEventsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @papa_event.update(papa_event_params)
+      redirect_to action: :show
+    else
+      render :edit
+    end
+  end
+
   private
 
   def papa_event_params
     params.require(:papa_event).permit(:started_at, :finished_at, :todo, :place, :expected_reward, :reward).merge(user_id: current_user.id, papa_id: params[:papa_id])
+  end
+
+  def specified_papa_event
+    @papa = Papa.find(params[:id])
+    @papa_event = PapaEvent.find(params[:id])
   end
 end
