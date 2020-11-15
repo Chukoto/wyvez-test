@@ -1,10 +1,10 @@
 class PapasController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!
   before_action :specified_papa, only: [:edit, :update, :destroy]
   before_action :specified_user, only: [:edit, :destroy]
 
   def show
-    @papas = current_user.papas
+    @papas = current_user.papas.order('created_at DESC')
   end
 
   def new
