@@ -20,7 +20,7 @@
         <%= "アプリ：#{event.papa.app_name}" %>
       </div>
       <div>
-        <%= "開始日：#{event.started_at}さん"%>
+        <%= "開始日：#{event.started_at}"%>
       </div>
       <div>
         <%= "終了日：#{event.finished_at}" %>
@@ -39,5 +39,7 @@
       </div>
     </ul>
     <div>
+      <%= link_to "編集する", edit_papa_papa_event_path(event.id) %>
+      <%= link_to "削除する", '#' %>
     </div>
   <% end %>
