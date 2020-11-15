@@ -6,7 +6,7 @@
 
 <div class="papa_event-main">
   <h2 class="papa_event-info">パパ活スケジュール</h2>
-<%= form_with(model:[@papa, @papa_event], url: papa_papa_events_path, method: :post, local: true) do |f| %>
+<%= form_with(model:[@papa, @papa_event], url: papa_papa_event_path, method: :patch, local: true) do |f| %>
 
 <%= render 'shared/error_messages', model: f.object %>
 
