@@ -42,7 +42,7 @@ class PapaEventsController < ApplicationController
   private
 
   def papa_event_params
-    params.require(:papa_event).permit(:started_at, :finished_at, :todo, :place, :expected_reward, :reward).merge(user_id: current_user.id, papa_id: params[:papa_id])
+    params.require(:papa_event).permit(:started_at, :finished_at, :do_what_id, :todo, :place, :expected_reward, :reward, :status_id).merge(user_id: current_user.id, papa_id: params[:papa_id])
   end
 
   def specified_papa_event

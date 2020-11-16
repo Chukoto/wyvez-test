@@ -26,6 +26,9 @@
         <%= "終了日：#{event.finished_at}" %>
       </div>
       <div>
+        <%= "やること：#{event.do_what.name}" %>
+      </div>
+      <div>
         <%= "todo：#{event.todo}" %>
       </div>
       <div>
@@ -36,6 +39,9 @@
       </div>
       <div>
         <%= "報酬：#{event.reward}" %>
+      </div>
+      <div>
+        <%= "スケジュールの状態：#{event.status.name}" %>
       </div>
     </ul>
     <div>
