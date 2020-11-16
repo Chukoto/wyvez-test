@@ -51,10 +51,12 @@ ActiveRecord::Schema.define(version: 2020_11_13_094445) do
   create_table "papa_events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "started_at", null: false
     t.datetime "finished_at"
+    t.integer "do_what_id"
     t.text "todo"
     t.text "place"
     t.integer "expected_reward", null: false
     t.integer "reward"
+    t.integer "status_id", null: false
     t.bigint "papa_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
