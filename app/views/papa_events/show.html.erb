@@ -39,7 +39,7 @@
       </div>
     </ul>
     <div>
-      <%= link_to "編集する", edit_papa_papa_event_path(event.id) %>
-      <%= link_to "削除する", '#' %>
+      <%= link_to "編集する", edit_papa_papa_event_path(event.papa_id, event.id), method: :get %>
+      <%= link_to "削除する", papa_papa_event_path(event.papa_id, event.id), method: :delete %>
     </div>
   <% end %>
