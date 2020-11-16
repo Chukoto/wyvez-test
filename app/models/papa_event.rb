@@ -3,7 +3,6 @@ class PapaEvent < ApplicationRecord
   belongs_to_active_hash :do_what
   belongs_to_active_hash :status
 
-
   belongs_to :user
   belongs_to :papa
 
