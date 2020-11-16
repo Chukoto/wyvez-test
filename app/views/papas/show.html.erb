@@ -37,9 +37,12 @@
         <%= "メモ：#{papa.memo}" %>
       </div>
     </ul>
+
     <div>
+    <% if user_signed_in? && current_user.id == papa.user_id %>
       <%= link_to "編集する", edit_papa_path(papa.id), method: :get %>
       <%= link_to "削除する", papa_path(papa.id), method: :delete %>
       <%= link_to "#{papa.name}さんとのパパ活スケジュールを見る", papa_papa_event_path(papa.id) %>
+    <% end %>
     </div>
   <% end %>

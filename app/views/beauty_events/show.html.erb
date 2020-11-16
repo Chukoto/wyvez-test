@@ -39,7 +39,9 @@
     </ul>
 
     <div>
-      <%= link_to "編集する", edit_beauty_event_path, method: :get %>
-      <%= link_to "削除する", beauty_event_path, method: :delete %>
+    <% if user_signed_in? && current_user.id == beauty.user_id %>
+      <%= link_to "編集する", edit_beauty_event_path(beauty.id), method: :get %>
+      <%= link_to "削除する", beauty_event_path(beauty.id), method: :delete %>
+    <% end %>
     </div>
   <% end %>

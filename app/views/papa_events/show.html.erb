@@ -45,7 +45,9 @@
       </div>
     </ul>
     <div>
+    <% if user_signed_in? && current_user.id == event.user_id %>
       <%= link_to "編集する", edit_papa_papa_event_path(event.papa_id, event.id), method: :get %>
       <%= link_to "削除する", papa_papa_event_path(event.papa_id, event.id), method: :delete %>
+    <% end %>
     </div>
   <% end %>
