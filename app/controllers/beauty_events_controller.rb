@@ -2,7 +2,7 @@ class BeautyEventsController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @beauty_events = current_user.beauty_events.where(user_id: current_user.id).order('created_at DESC')
+    @beauty_events = current_user.beauty_events.order('created_at DESC')
   end
 
   def new
