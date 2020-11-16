@@ -1,6 +1,8 @@
 class PapaEventsController < ApplicationController
   before_action :authenticate_user!
-  before_action :specified_papa_event, only: [:edit, :update]
+  before_action :specified_papa_event, only: [:edit, :update, :destroy]
+  before_action :specified_user, only: [:edit, :destroy]
+
   def show
     @papa_events = current_user.papa_events.where(papa_id: params[:papa_id]).order('created_at DESC')
   end
@@ -12,7 +14,7 @@ class PapaEventsController < ApplicationController
   def create
     @papa_event = PapaEvent.new(papa_event_params)
     if @papa_event.save
-      redirect_to root_path
+      redirect_to papa_papa_event_path(current_user.papas.ids, current_user.id)
     else
       render :new
     end
@@ -29,6 +31,14 @@ class PapaEventsController < ApplicationController
     end
   end
 
+  def destroy
+    if @papa_event.destroy
+      redirect_to papa_papa_event_path(current_user.papas.ids, current_user.id)
+    else
+      render :show
+    end
+  end
+
   private
 
   def papa_event_params
@@ -36,7 +46,10 @@ class PapaEventsController < ApplicationController
   end
 
   def specified_papa_event
-    @papa = Papa.find(params[:id])
     @papa_event = PapaEvent.find(params[:id])
+  end
+
+  def specified_user
+    redirect_to root_path unless current_user.id == @papa_event.user_id
   end
 end
