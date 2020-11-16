@@ -5,7 +5,7 @@ class Papa < ApplicationRecord
   belongs_to_active_hash :child
 
   belongs_to :user
-  has_many :papa_events
+  has_many :papa_events, dependent: :destroy
 
   has_one_attached :image
 
