@@ -6,24 +6,28 @@
 
 <div class="papa_event-main">
   <h2 class="papa_event-info">パパ活スケジュール</h2>
-<%= form_with(model:[@papa, @papa_event], url: papa_papa_events_path, method: :post, local: true) do |f| %>
+  <%= form_with(model:[@papa, @papa_event], url: papa_papa_events_path, method: :post, local: true) do |f| %>
 
-<%= render 'shared/error_messages', model: f.object %>
+    <%= render 'shared/error_messages', model: f.object %>
 
   <%# started_at %>
   <div>
   <%= f.label :started_at, '開始日', class: 'control-label' %>
   <%= f.date_field :started_at, class: 'form-control' %>
+  <span class="indispensable">必須</span>
   <%= f.label :started_at, '開始時間', class: 'control-label' %>
   <%= f.time_field :started_at, class: 'form-control' %>
+  <span class="indispensable">必須</span>
   </div>
 
   <%# finished_at %>
   <div>
   <%= f.label :finished_at, '終了日', class: 'control-label' %>
   <%= f.date_field :finished_at, class: 'form-control' %>
+  <span class="indispensable">必須</span>
   <%= f.label :finished_at, '終了時間', class: 'control-label' %>
   <%= f.time_field :finished_at, class: 'form-control' %>
+  <span class="indispensable">必須</span>
   </div>
 
   <%# do_what_id %>

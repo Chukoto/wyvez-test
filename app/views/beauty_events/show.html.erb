@@ -12,10 +12,34 @@
 </div>
 
 <div>
-  <%= link_to "美容スケジュールを作成する", '#' %>
+  <%= link_to "美容スケジュールを作成する", new_beauty_event_path %>
 </div>
+
+  <% @beauty_events.each do |beauty| %>
+  ----------------------------------------
+    <ul>
+      <div>
+        <%= "美容カテゴリ：#{beauty.beauty_cate.name}" %>
+      </div>
+      <div>
+        <%= "予約日時：#{beauty.started_at}"%>
+      </div>
+      <div>
+        <%= "場所：#{beauty.place}" %>
+      </div>
+      <div>
+        <%= "メモ：#{beauty.memo}" %>
+      </div>
+      <div>
+        <%= "施術コスト：#{beauty.cost}" %>
+      </div>
+      <div>
+        <%= "スケジュールの状態：#{beauty.status.name}" %>
+      </div>
+    </ul>
 
     <div>
       <%= link_to "編集する", '#' %>
       <%= link_to "削除する", '#' %>
     </div>
+  <% end %>
