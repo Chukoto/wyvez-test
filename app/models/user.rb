@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :questions, through: :bookmarks
   has_many :papas, dependent: :destroy
   has_many :papa_events, dependent: :destroy
+  has_many :beauty_events
   has_one  :profile
 
   enum gender: { yet: 0, already: 1 }
