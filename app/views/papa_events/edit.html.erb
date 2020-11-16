@@ -27,6 +27,11 @@
   </div>
 
   <%# do_what_id %>
+  <div>
+    やること
+    <span class="indispensable">必須</span>
+  </div>
+  <%= f.collection_select(:do_what_id, DoWhat.all, :id, :name, {}, {class:"do_what-select"}) %>
 
   <%# todo %>
   <div class="papa_event-todo">
@@ -52,6 +57,13 @@
     獲得報酬額（受取後記入）
   </div>
   <%= f.text_field :reward, class:"reward-input", id:"reward_id", placeholder:"半角数字で記入" %>
+
+  <%# status_id %>
+  <div>
+  スケジュールの状態
+    <span class="indispensable">必須</span>
+  </div>
+  <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"status-select"}) %>
 
   <%# 送信ボタン %>
   <div class="question-submit-btn">
