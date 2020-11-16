@@ -42,11 +42,11 @@ class BeautyEventsController < ApplicationController
   private
 
   def beauty_event_params
-    params.require(:beauty_event).permit(:beauty_cate_id, :started_at, :place, :memo, :cost, :status_id).merge(user_id: current_user.id)    
+    params.require(:beauty_event).permit(:beauty_cate_id, :started_at, :place, :memo, :cost, :status_id).merge(user_id: current_user.id)
   end
 
   def specified_beauty_event
-    @beauty_event = BeautyEvent.find(params[:id])    
+    @beauty_event = BeautyEvent.find(params[:id])
   end
 
   def specified_user
