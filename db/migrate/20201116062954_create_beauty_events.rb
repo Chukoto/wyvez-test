@@ -7,6 +7,7 @@ class CreateBeautyEvents < ActiveRecord::Migration[6.0]
       t.text       :memo,           null: true
       t.integer    :cost,           null: true
       t.integer    :status_id,      null: false
+      t.references :user, null: false, foreign_key: true
       t.timestamps
     end
   end
