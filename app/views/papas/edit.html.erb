@@ -9,7 +9,7 @@
   <h2 class="papa-info">パパの情報</h2>
   <%= form_with model: @papa, url: papa_path, method: :patch, local: true do |f| %>
 
-  <%= render 'shared/error_messages', model: f.object %>
+    <%= render 'shared/error_messages', model: f.object %>
 
   <%# 画像添付 %>
   <div class="image-field">

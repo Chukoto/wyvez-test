@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :profiles, only: [:show, :new, :create, :edit, :update]
 
-  resources :beauty_events, only: [:show]
+  resources :beauty_events, only: [:show, :new, :create]
 
   resources :papas, only: [:show, :new, :create, :edit, :update, :destroy] do
     resources :papa_events, only: [:show, :new, :create, :edit, :update, :destroy]

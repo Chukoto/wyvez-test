@@ -1,4 +1,7 @@
 class BeautyEvent < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :beauty_cate
+  belongs_to_active_hash :status
 
   belongs_to :user
 
@@ -9,7 +12,7 @@ class BeautyEvent < ApplicationRecord
   end
 
   with_options presence: true do
-    validates :beauty_cate_id
+    validates :beauty_cate_id, numericality: { other_than: 0 }
     validates :started_at
     validates :status_id, numericality: { other_than: 0 }
   end
