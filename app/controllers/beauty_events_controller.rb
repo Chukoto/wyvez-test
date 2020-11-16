@@ -1,8 +1,10 @@
 class BeautyEventsController < ApplicationController
   before_action :authenticate_user!
+  before_action :specified_beauty_event, only: [:edit, :update]
+  before_action :specified_user, only: [:edit]
 
   def show
-    @beauty_events = current_user.beauty_events.where(user_id: current_user.id).order('created_at DESC')
+    @beauty_events = current_user.beauty_events.order('created_at DESC')
   end
 
   def new
@@ -18,9 +20,28 @@ class BeautyEventsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @beauty_event.update(beauty_event_params)
+      redirect_to action: :show
+    else
+      render :edit
+    end
+  end
+
   private
 
   def beauty_event_params
     params.require(:beauty_event).permit(:beauty_cate_id, :started_at, :place, :memo, :cost, :status_id).merge(user_id: current_user.id)    
+  end
+
+  def specified_beauty_event
+    @beauty_event = BeautyEvent.find(params[:id])    
+  end
+
+  def specified_user
+    redirect_to root_path unless current_user.id == @beauty_event.user_id
   end
 end
