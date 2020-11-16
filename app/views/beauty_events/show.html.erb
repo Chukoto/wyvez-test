@@ -39,7 +39,7 @@
     </ul>
 
     <div>
-      <%= link_to "編集する", edit_beauty_event_path(beauty.id) %>
-      <%= link_to "削除する", '#' %>
+      <%= link_to "編集する", edit_beauty_event_path, method: :get %>
+      <%= link_to "削除する", beauty_event_path, method: :delete %>
     </div>
   <% end %>
