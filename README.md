@@ -19,6 +19,7 @@
 - has_many :bookmarks
 - has_many :papas
 - has_many :papa_events
+- has_many :beauty_events
 - has_one  :profile
 
 ## questions テーブル
@@ -110,3 +111,19 @@
 
 - belongs_to :user
 - belongs_to :papa
+
+## beauty_events テーブル
+
+| Column                | Type       | Options                        |
+| --------------------- | ---------- | ------------------------------ |
+| beauty_cate_id        | integer    | null: false                    |
+| started_at            | datetime   | null: false                    |
+| place                 | text       | null: true                     |
+| memo                  | text       | null: true                     |
+| cost                  | integer    | null: true                     |
+| status_id             | integer    | null: false                    |
+| user                  | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
