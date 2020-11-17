@@ -10,6 +10,10 @@
   <%= link_to "パパ活スケジュールを作成する", new_papa_papa_event_path %>
 </div>
 
+<div>
+  <%= render "shared/map" %>
+</div>
+
   <% @papa_events.each do |event| %>
   ----------------------------------------
     <ul>
