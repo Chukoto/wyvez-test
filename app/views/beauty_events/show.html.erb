@@ -15,6 +15,10 @@
   <%= link_to "美容スケジュールを作成する", new_beauty_event_path %>
 </div>
 
+<div>
+  <%= render "shared/map" %>
+</div>
+
   <% @beauty_events.each do |beauty| %>
   ----------------------------------------
     <ul>
